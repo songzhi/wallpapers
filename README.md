@@ -1,22 +1,24 @@
 <h1 align="center">Welcome to wallpapers 👋</h1>
-<p>
-</p>
+
+[![crate](https://img.shields.io/crates/v/wallpapers.svg)](https://crates.io/crates/wallpapers)
+[![docs](https://docs.rs/wallpapers/badge.svg)](https://docs.rs/wallpapers)
 
 > Set wallpaper periodically
 
 ### 🏠 [Homepage](https://github.com/songzhi/wallpapers)
 
 ## Features
-*[ ] Configurable
-*[ ] Cross-platform
+* [ ] Configurable
+
+* [ ] Cross-platform
 
 ## Picture source
 * [unsplash](https://unsplash.com)
 
 ## Support platforms
-*[x] Windows
+* [x] Windows
 
-*[ ] Unix-like
+* [ ] Unix-like
 
 ## Install
 
