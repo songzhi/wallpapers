@@ -8,7 +8,7 @@
 ### 🏠 [Homepage](https://github.com/songzhi/wallpapers)
 
 ## Features
-* [ ] Configurable
+* [x] Configurable
 
 * [ ] Cross-platform
 
@@ -25,6 +25,7 @@
 ```sh
  cargo install wallpapers
 ```
+Put it in your start directory.
 
 ## Author
 
