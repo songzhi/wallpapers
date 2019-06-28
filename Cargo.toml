@@ -3,7 +3,11 @@ name = "wallpapers"
 version = "0.1.0"
 authors = ["lsongzhi <lsongzhi@163.com>"]
 edition = "2018"
-
+repository = "https://github.com/songzhi/wallpapers"
+readme = "README.md"
+keywords = ["wallpaper", "cli"]
+license = "MIT"
+description = "Set wallpaper periodically."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
