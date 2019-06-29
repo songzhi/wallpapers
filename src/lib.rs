@@ -3,39 +3,43 @@ mod singleton;
 mod daemon;
 pub mod config;
 
+pub use config::*;
+
 use wallpaper;
 use std::thread::sleep;
 use crate::daemon::DaemonRunner;
 use daemon::State;
 use std::sync::mpsc::Receiver;
+use crate::config::Config;
+use std::error::Error;
 
 
-pub fn set_random_wallpaper(collections_param: Option<String>) {
-    static DEFAULT_URL: &str = "https://source.unsplash.com/random/1920x1080/?desktop-wallpapers&orientation=landscape&featured=1";
-
-    if let Some(collections) = collections_param {
-        let url = format!("{}&collections={}", DEFAULT_URL, collections);
-        wallpaper::set_from_url(&url);
-    } else {
-        wallpaper::set_from_url(DEFAULT_URL);
+pub fn set_random_wallpaper(config: &Config) {
+    // just unwrap because we use Config::default()
+    let mut url = format!("https://source.unsplash.com/random/{}/?{}&orientation={}&featured=1",
+                          config.image_resolution.as_ref().unwrap(),
+                          config.search_keyword.as_ref().unwrap(),
+                          config.orientation.unwrap());
+    if let Some(ref collections) = config.collections {
+        let collections = collections.join(",");
+        url.push_str(&format!("&collections={}", collections));
     };
+    wallpaper::set_from_url(&url);
 }
 
 pub fn main_loop() {
     loop {
         let config = config::get_config();
-        let config = config.lock().expect("");
-        let collections_param = config.collections.as_ref()
-            .map(|collections| collections.join(","));
-        set_random_wallpaper(collections_param);
+        let config = config.lock().expect("Lock config failed");
+        set_random_wallpaper(&config);
         let duration = config.get_interval();
         sleep(duration);
     }
 }
 
-pub fn run() {
+pub fn run_as_daemon() {
     let daemon = daemon::Daemon {
-        name: "wallpapers_rs".to_string()
+        name: "main".to_string()
     };
     daemon.run(|_: Receiver<State>| main_loop());
 }

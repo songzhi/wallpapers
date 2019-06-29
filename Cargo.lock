@@ -1426,7 +1426,7 @@ dependencies = [
 
 [[package]]
 name = "wallpapers"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "daemonize 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "fs2 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",

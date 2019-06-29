@@ -8,9 +8,18 @@
 ### 🏠 [Homepage](https://github.com/songzhi/wallpapers)
 
 ## Features
-* [x] Configurable
+* [x] Singleton: Just only one instance of exe running at the same time.
+
+* [x] Configurable: the config file names as wallpapers.toml and will be created in the exe's directory.
+You can close the process,change config file then relaunch the exe.
+* unsplash collections
+* search keyword: "wallpapers",etc.
+* orientation: "landscape","portrait","squarish",
+* image resolution: "1920x1080",etc.Based on orientation.
 
 * [ ] Cross-platform
+
+* [ ] Config file  watcher
 
 ## Picture source
 * [unsplash](https://unsplash.com)
