@@ -12,6 +12,7 @@
 
 * [x] Configurable: the config file names as wallpapers.toml and will be created in the exe's directory.
 You can close the process,change config file then relaunch the exe.
+* interval: count in minutes,default 10.
 * unsplash collections
 * search keyword: "wallpapers",etc.
 * orientation: "landscape","portrait","squarish",
