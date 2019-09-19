@@ -1,5 +1,7 @@
 #[cfg(target_os = "windows")]
 mod windows;
+#[cfg(target_os = "unix")]
+mod unix;
 
 use std::io::Error;
 use std::sync::mpsc::Receiver;

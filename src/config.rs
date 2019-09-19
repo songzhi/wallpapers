@@ -31,19 +31,25 @@ pub enum Orientation {
 }
 
 impl Orientation {
-    pub fn get_image_resolution(&self) -> &'static str {
+    pub fn get_image_resolution(self) -> &'static str {
         match self {
             Orientation::Landscape => "1920x1080",
             Orientation::Portrait => "1080x1920",
             Orientation::Squarish => "1440x1440"
         }
     }
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Orientation::Landscape => "landscape",
+            Orientation::Portrait => "portrait",
+            Orientation::Squarish => "squarish"
+        }
+    }
 }
 
 impl fmt::Display for Orientation {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", toml::to_string(self)
-            .expect("Serialize Orientation failed").to_ascii_lowercase())
+        write!(f, "{}", self.as_str())
     }
 }
 

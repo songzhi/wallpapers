@@ -11,7 +11,6 @@ use crate::daemon::DaemonRunner;
 use daemon::State;
 use std::sync::mpsc::Receiver;
 use crate::config::Config;
-use std::error::Error;
 
 
 pub fn set_random_wallpaper(config: &Config) {

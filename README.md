@@ -18,7 +18,7 @@ You can close the process,change config file then relaunch the exe.
 * orientation: "landscape","portrait","squarish",
 * image resolution: "1920x1080",etc.Based on orientation.
 
-* [ ] Cross-platform
+* [x] Cross-platform
 
 * [ ] Config file  watcher
 
@@ -28,7 +28,7 @@ You can close the process,change config file then relaunch the exe.
 ## Support platforms
 * [x] Windows
 
-* [ ] Unix-like
+* [x] Unix-like
 
 ## Install
 
