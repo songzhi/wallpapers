@@ -1,11 +1,9 @@
-#[macro_use]
-mod singleton;
 mod daemon;
 pub mod config;
 
 pub use config::*;
 
-use wallpaper;
+
 use std::thread::sleep;
 use crate::daemon::DaemonRunner;
 use daemon::State;

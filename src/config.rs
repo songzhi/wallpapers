@@ -5,7 +5,6 @@ use serde::{Serialize, Deserialize};
 use std::env;
 use std::fs::OpenOptions;
 use fs2::FileExt;
-use toml;
 use std::io::Read;
 use std::fmt;
 
